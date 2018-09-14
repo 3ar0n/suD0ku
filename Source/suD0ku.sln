@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SolveSudoku", "SolveSudoku\SolveSudoku.vcxproj", "{F4F59D1A-C311-4EFD-B98C-33C7F3149E00}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "suD0ku", "suD0ku\suD0ku.vcxproj", "{3446A288-1C4F-4C82-B992-2A952B1E6A42}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F4F59D1A-C311-4EFD-B98C-33C7F3149E00}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F4F59D1A-C311-4EFD-B98C-33C7F3149E00}.Debug|Win32.Build.0 = Debug|Win32
+		{F4F59D1A-C311-4EFD-B98C-33C7F3149E00}.Release|Win32.ActiveCfg = Release|Win32
+		{F4F59D1A-C311-4EFD-B98C-33C7F3149E00}.Release|Win32.Build.0 = Release|Win32
+		{3446A288-1C4F-4C82-B992-2A952B1E6A42}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3446A288-1C4F-4C82-B992-2A952B1E6A42}.Debug|Win32.Build.0 = Debug|Win32
+		{3446A288-1C4F-4C82-B992-2A952B1E6A42}.Release|Win32.ActiveCfg = Release|Win32
+		{3446A288-1C4F-4C82-B992-2A952B1E6A42}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {92EB54C4-6BA9-4099-9F6A-BB9D4143B39D}
+	EndGlobalSection
+EndGlobal
