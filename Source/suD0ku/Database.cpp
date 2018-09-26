@@ -234,7 +234,7 @@ void SolveSudoku(info *LinkRow, bool *check, ref p) //Giải Sudoku (bằng đ�
 
 int Pointer(info *LinkRow, ref *p, int x, int y, bool Solve)
 {
-	int Key, tmp;
+	int Key;
 	int X = x + 4 + (*p)->col * 8, Y = y + 2 + (*p)->row * 4;
 	putPointer(X , Y);
 	bool out = false;
@@ -354,12 +354,12 @@ void CopyData(info *RowSource, info *RowDest, bool is_full) //Sao chép dữ li�
 
 void enterCode(int x, int y, char *str)
 {
-	char tmp, key;
+	char tmp;
 	int i = 0;
 	do
 	{
 		gotoxy(x, y);
-		tmp = getch();
+		tmp = _getch();
 
 		if ((tmp >= 32 && tmp <= 126) && i < 19)
 		{

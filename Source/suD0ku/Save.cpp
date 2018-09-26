@@ -4,15 +4,15 @@ void SaveOpt(opt *head)
 {
 	opt s1 = (opt)malloc(sizeof(menu));
 	s1->value = 10;
-	strcpy(s1->text, " Y E S ");
+	strcpy_s(s1->text, " Y E S ");
 
 	opt s2 = (opt)malloc(sizeof(menu));
 	s2->value = 20;
-	strcpy(s2->text, "  N O  ");
+	strcpy_s(s2->text, "  N O  ");
 
 	opt s3 = (opt)malloc(sizeof(menu));
 	s3->value = 30;
-	strcpy(s3->text, "B A C K");
+	strcpy_s(s3->text, "B A C K");
 
 
 	*head = s1;

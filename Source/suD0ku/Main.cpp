@@ -21,7 +21,7 @@ int main()
 
 	opt headMenu;
 	CreateMenu(&headMenu);
-	int choose, key, level, how;
+	int choose, level;
 
 	//Phần chính
 	do
@@ -29,7 +29,7 @@ int main()
 		system("cls");
 		putLogo(13, 11, White, Cyan);
 
-		f = fopen("sud0ku.save", "rt");
+		errno_t err = fopen_s(&f, "sud0ku.save", "rt");
 		if (f)
 		{
 			saved = true;
@@ -46,9 +46,6 @@ int main()
 			putLogo(13, 11, White, Cyan);
 			opt headLevel;
 			DifficultLevel(&headLevel);
-			//gotoxy(33, 18);
-			//SetColor(11);
-			//printf("             L E V E L            ");
 			level = SelectLevel(headLevel, 35, 30);
 			ClearMenu(headLevel);
 			if (level)
@@ -83,6 +80,10 @@ int main()
 	if (saved)
 		remove("sud0ku.save");
 	SetColor(15);
-	//gotoxy(0, 44);
 	return 0;
+	/* Cheat code:
+		Never Give Up
+		mjolnir
+		selfie
+	*/
 }

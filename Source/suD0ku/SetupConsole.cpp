@@ -3,7 +3,7 @@
 int Read_Key()
 {
 	int key = -1;
-	switch (getch())
+	switch (_getch())
 	{
 		case 13:
 			key = Enter;
@@ -27,7 +27,7 @@ int Read_Key()
 			key = Hint;
 			break;
 		case 224:
-			switch (getch())
+			switch (_getch())
 			{
 				case 72: key = Up; break;
 				case 75: key = Left; break;
@@ -49,7 +49,7 @@ int Read_Key()
 	return key;
 }
 
-void gotoxy(int x, int y)
+void gotoxy(SHORT x, SHORT y)
 {
 	static HANDLE h = NULL;
 	if (!h)
@@ -65,7 +65,7 @@ void SetColor(int Text, int Background)
 	SetConsoleTextAttribute(hConsole, Background * 16 + Text);
 }
 
-void SetWindowsSize(int x, int y)
+void SetWindowsSize(SHORT x, SHORT y)
 {
 	HANDLE hConsole;
 	hConsole = GetStdHandle(STD_OUTPUT_HANDLE);

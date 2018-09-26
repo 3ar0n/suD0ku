@@ -60,9 +60,9 @@ void LoadingBar(int x, int y, int size, int Color)
 		gotoxy(x + i, y + 1);
 		printf("%c", 223);
 		if (i < size - 1)
-			Sleep(10 + i);
+			Sleep(5 + i/2);
 		else
-			Sleep(200);
+			Sleep(100);
 	}
 	gotoxy(0, 0);
 	SetColor();
@@ -72,23 +72,23 @@ void CreateMenu(opt *head)
 {
 	opt p1 = (opt)malloc(sizeof(menu));
 	p1->value = 1;
-	strcpy(p1->text, "   N E W   G A M E   ");
+	strcpy_s(p1->text, "   N E W   G A M E   ");
 
 	opt p2 = (opt)malloc(sizeof(menu));
 	p2->value = 2;
-	strcpy(p2->text, "   C O N T I N U E   ");
+	strcpy_s(p2->text, "   C O N T I N U E   ");
 
 	opt p3 = (opt)malloc(sizeof(menu));
 	p3->value = 3;
-	strcpy(p3->text, "H O W   T O   P L A Y");
+	strcpy_s(p3->text, "H O W   T O   P L A Y");
 
 	opt p4 = (opt)malloc(sizeof(menu));
 	p4->value = 4;
-	strcpy(p4->text, "      A B O U T      ");
+	strcpy_s(p4->text, "      A B O U T      ");
 
 	opt p5 = (opt)malloc(sizeof(menu));
 	p5->value = 5;
-	strcpy(p5->text, "       E X I T       ");
+	strcpy_s(p5->text, "       E X I T       ");
 
 	*head = p1;
 	p1->prev = NULL;
@@ -208,11 +208,11 @@ void ExitOpt(opt *head)
 {
 	opt e1 = (opt)malloc(sizeof(menu));
 	e1->value = 5;
-	strcpy(e1->text, "Y E S");
+	strcpy_s(e1->text, "Y E S");
 
 	opt e2 = (opt)malloc(sizeof(menu));
 	e2->value = 0;
-	strcpy(e2->text, " N O ");
+	strcpy_s(e2->text, " N O ");
 
 	*head = e1;
 	e1->prev = NULL;

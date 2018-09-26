@@ -177,7 +177,7 @@ void Moving_Square(int sizeX, int sizeY)
 		else
 			Sleep(Speed);
 		
-		if (kbhit())
+		if (_kbhit())
 		{
 			Key = Read_Key();
 			if (Key == Esc)

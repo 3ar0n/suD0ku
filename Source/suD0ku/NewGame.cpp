@@ -4,15 +4,15 @@ void DifficultLevel(opt *head)
 {
 	opt l1 = (opt)malloc(sizeof(menu));
 	l1->value = 1;
-	strcpy(l1->text, "       E A S Y       ");
+	strcpy_s(l1->text, "       E A S Y       ");
 
 	opt l2 = (opt)malloc(sizeof(menu));
 	l2->value = 2;
-	strcpy(l2->text, "     N O R M A L     ");
+	strcpy_s(l2->text, "     N O R M A L     ");
 
 	opt l3 = (opt)malloc(sizeof(menu));
 	l3->value = 3;
-	strcpy(l3->text, "       H A R D       ");
+	strcpy_s(l3->text, "       H A R D       ");
 
 
 	*head = l1;

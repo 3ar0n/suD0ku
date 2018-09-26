@@ -2,7 +2,8 @@
 
 void readFile(char *input, info **LinkRow, info **LinkCol, info **LinkCell, int *difficulty, int *hint)
 {
-	FILE * f = fopen(input, "rt");
+	FILE * f;
+	errno_t err = fopen_s(&f, input, "rt");
 	if (f != NULL)
 	{
 		int i, j;
@@ -26,7 +27,7 @@ void readFile(char *input, info **LinkRow, info **LinkCol, info **LinkCell, int 
 			for (j = 0; j < 9; j++)
 			{
 				p = CreateNode(i, j);
-				fscanf(f, "%d", &n);
+				fscanf_s(f, "%d", &n);
 				if (n > 0 && n <= 9)
 				{
 					p->key = n;
@@ -55,9 +56,9 @@ void readFile(char *input, info **LinkRow, info **LinkCol, info **LinkCell, int 
 				AddNode(&(*LinkCell + tmp)->head, p, a_cell);
 			}
 		}
-		fscanf(f, "%d", &n);
+		fscanf_s(f, "%d", &n);
 		*difficulty = n;
-		fscanf(f, "%d", &n);
+		fscanf_s(f, "%d", &n);
 		*hint = n;
 		fclose(f);
 	}
@@ -67,7 +68,8 @@ void readFile(char *input, info **LinkRow, info **LinkCol, info **LinkCell, int 
 
 void writeFile(char* output, info *LinkRow, int difficulty, int hint)
 {
-	FILE* f = fopen(output, "wt");
+	FILE* f;
+	errno_t err = fopen_s(&f, output, "wt");
 	if (f != NULL)
 	{
 		for (int i = 0; i < 9; i++)

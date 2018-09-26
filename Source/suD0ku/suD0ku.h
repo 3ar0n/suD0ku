@@ -35,50 +35,50 @@ struct menu
 };
 
 //key
-#define Up 22472
-#define Left 22475
-#define Right 22477
-#define Down 22480
-#define Enter 13
-#define Esc 27
-#define New 78
-#define Hint 72
-#define Clear 67
-#define Erase 69
-#define Check 75
-#define Mute 77
+constexpr auto Up = 22472;
+constexpr auto Left = 22475;
+constexpr auto Right = 22477;
+constexpr auto Down = 22480;
+constexpr auto Enter = 13;
+constexpr auto Esc = 27;
+constexpr auto New = 78;
+constexpr auto Hint = 72;
+constexpr auto Clear = 67;
+constexpr auto Erase = 69;
+constexpr auto Check = 75;
+constexpr auto Mute = 77;
 
 //mode
-#define a_row 1001
-#define a_col 1002
-#define a_cell 1003
+constexpr auto a_row = 1001;
+constexpr auto a_col = 1002;
+constexpr auto a_cell = 1003;
 
 //color
-#define Black 0
-#define Blue_D 1
-#define Green_D 2
-#define Cyan_D 3
-#define Red_D 4
-#define Pink_D 5
-#define Yellow_D 6
-#define White_D 7
-#define Grey 8
-#define Blue 9
-#define Green 10
-#define Cyan 11
-#define Red 12
-#define Pink 13
-#define Yellow 14
-#define White 15
+constexpr auto Black = 0;
+constexpr auto Blue_D = 1;
+constexpr auto Green_D = 2;
+constexpr auto Cyan_D = 3;
+constexpr auto Red_D = 4;
+constexpr auto Pink_D = 5;
+constexpr auto Yellow_D = 6;
+constexpr auto White_D = 7;
+constexpr auto Grey = 8;
+constexpr auto Blue = 9;
+constexpr auto Green = 10;
+constexpr auto Cyan = 11;
+constexpr auto Red = 12;
+constexpr auto Pink = 13;
+constexpr auto Yellow = 14;
+constexpr auto White = 15;
 
 //Main.cpp
 void ClearMenu(opt head);
 
 //SetupConsole.cpp
 int Read_Key();
-void gotoxy(int x, int y);
+void gotoxy(SHORT x, SHORT y);
 void SetColor(int Text = White, int Background = Black);
-void SetWindowsSize(int x = 80, int y = 25);
+void SetWindowsSize(SHORT x = 80, SHORT y = 25);
 
 //Graphic.cpp
 void putLogo(int x, int y, int Color, int Color_Shad);

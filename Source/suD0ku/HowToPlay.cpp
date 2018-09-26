@@ -4,15 +4,15 @@ void RuleOpt(opt *head)
 {
 	opt h1 = (opt)malloc(sizeof(menu));
 	h1->value = 1;
-	strcpy(h1->text, "- the numbers 1 to 9 appear exactly once in each row");
+	strcpy_s(h1->text, "- the numbers 1 to 9 appear exactly once in each row");
 
 	opt h2 = (opt)malloc(sizeof(menu));
 	h2->value = 2;
-	strcpy(h2->text, "- the numbers 1 to 9 appear exactly once in each column");
+	strcpy_s(h2->text, "- the numbers 1 to 9 appear exactly once in each column");
 
 	opt h3 = (opt)malloc(sizeof(menu));
 	h3->value = 3;
-	strcpy(h3->text, "- the numbers 1 to 9 appear exactly once in each 3x3 box");
+	strcpy_s(h3->text, "- the numbers 1 to 9 appear exactly once in each 3x3 box");
 
 	*head = h1;
 	h1->prev = NULL;
@@ -86,7 +86,6 @@ void SelectRule(opt head, int x, int y)
 		}
 	} while (Key != Esc);
 	SetColor();
-	//return p->value;
 }
 
 void PrintSudoku_v2(info *LinkRow, int x, int y)
@@ -206,11 +205,6 @@ void HowToPlay()
 	printf("'C'");
 	SetColor();
 	printf(" to check the result, if you've fill all the cells without incorrect, you win\n");
-	//printf("  Press ");
-	//SetColor(Pink);
-	//printf("'Enter'");
-	//SetColor();
-	//printf(" then press Password to see answer\n");
 	printf("  Press ");
 	SetColor(Pink);
 	printf("'Esc'");
@@ -218,7 +212,6 @@ void HowToPlay()
 	printf(" to get back to the main menu");
 	opt headHow;
 	RuleOpt(&headHow);
-	int how;
 	SelectRule(headHow, 17, 13);
 
 	ClearMenu(headHow);

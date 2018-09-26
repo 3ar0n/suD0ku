@@ -2,7 +2,6 @@
 #include <malloc.h>
 #include <windows.h>
 #include <conio.h>
-#include <time.h>
 #include <stdlib.h>
 
 typedef struct sudoku * ref;
@@ -32,9 +31,9 @@ struct info
 #define a_cell 1003
 
 int Read_Key();
-void gotoxy(int x, int y);
+void gotoxy(SHORT x, SHORT y);
 void SetColor(int Color = 15);
-void SetWindowsSize(int x = 80, int y = 25);
+void SetWindowsSize(SHORT x, SHORT y);
 void putFrame(int x = 0, int y = 0);
 void putPointer(int x = 0, int y = 0);
 void putNumber(int key, int Color, int x = 0, int y = 0);
@@ -52,11 +51,11 @@ void SolveSudoku(info *LinkRow, bool *check, ref p = NULL);
 int Read_Key()
 {
 	int key = - 1;
-	switch (getch())
+	switch (_getch())
 	{
 	case 13: key = Enter; break;
 	case 224:
-		switch (getch())
+		switch (_getch())
 		{
 		case 72: key = Up; break;
 		case 75: key = Left; break;
@@ -78,7 +77,7 @@ int Read_Key()
 	return key;
 }
 
-void gotoxy(int x, int y)
+void gotoxy(SHORT x, SHORT y)
 {
 	static HANDLE h = NULL;
 	if (!h)
@@ -94,7 +93,7 @@ void SetColor(int Color)
 	SetConsoleTextAttribute(hConsole, Color);
 }
 
-void SetWindowsSize(int x, int y)
+void SetWindowsSize(SHORT x, SHORT y)
 {
 	HANDLE hConsole;
 	hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -638,22 +637,17 @@ void SolveSudoku(info *LinkRow, bool *check, ref p)
 
 int main()
 {
-	srand((unsigned)time(NULL));
-	SetWindowsSize(96, 39);
+	SetWindowsSize(80, 40);
 
-	int x = 21, y = 1; //Tọa độ gốc
+	int x = 6, y = 1; //Tọa độ gốc
 	info *ROW, *COL, *CELL;
 	bool check = true;
 
 	CreateTable(&ROW, &COL, &CELL);
-	//int number = rand();
-
-	//PrintSudoku(ROW);
 
 	putFrame(x, y);
-	for (int i = 1; i <= 9; i++)
-	{
-		putNumber(i, i, 4, 4 * i - 1);
+	for (int i = 1; i <= 9; i++) {
+		putNumber(i, i, 2, 4 * i - 1);
 	}
 	Pointer(ROW, x, y);
 
@@ -673,14 +667,19 @@ int main()
 	gotoxy(0, 37);
 	
 	if (check == false)
-		printf("Khong the giai ");
+	{
+		gotoxy(37, 38);
+		printf("Can't solve");
+	}
 
 	ClearTable(ROW);
 	free(ROW);
 	free(COL);
 	free(CELL);
 
-	getch();
-	//SetWindowsSize();
+	do {
+		gotoxy(34, 39);
+		printf("Press ESC to exit");
+	} while (_getch() != 27);
 	return 0;
 }

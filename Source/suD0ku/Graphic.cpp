@@ -639,6 +639,6 @@ void putWinner(int x, int y)
 		printf("Press 'Enter' to get back to main menu!");
 		gotoxy(0, 0);
 		Sleep(500);
-	} while (!kbhit());
+	} while (!_kbhit());
 	
 }
